@@ -1,0 +1,31 @@
+import sys
+ 
+def check(x,s):
+    if len(x)<len(s):
+        return False
+    for i in range(len(x)-len(s)+1):
+        if x[i:i+len(s)]==s:
+            return True
+    return False
+        
+input=sys.stdin.read
+data=input().split()
+index=0
+t=int(data[index])
+index+=1
+for _ in range(t):
+    n=int(data[index])
+    index+=1
+    m=int(data[index])
+    index+=1
+    x=data[index]
+    s=data[index+1]
+    index+=2
+    ans=-1
+    for i in range(6):
+        if s in x:
+            ans=i
+            break
+        x+=x
+    print(ans)
+        
