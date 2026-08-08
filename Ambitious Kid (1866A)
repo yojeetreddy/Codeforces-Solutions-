@@ -1,0 +1,17 @@
+import sys
+
+# Read the number of elements in the array
+n = int(sys.stdin.readline().strip())
+
+# Read the elements of the array
+array = list(map(int, sys.stdin.readline().strip().split()))
+
+# Initialize minimum_operations with a large value
+minimum_operations = float('inf')
+
+# Loop through each element to find the minimum absolute value
+for i in range(n):
+	minimum_operations = min(minimum_operations, abs(array[i]))
+
+# Output the minimum number of operations needed
+print(minimum_operations)
