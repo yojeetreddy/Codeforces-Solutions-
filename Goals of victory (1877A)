@@ -1,0 +1,23 @@
+import sys
+
+input = sys.stdin.read
+
+data = input().split()
+
+index = 0
+
+t = int(data[index]) # Read the number of test cases
+index += 1
+
+for _ in range(t): # Loop through each test case
+	n = int(data[index]) # Read the number of teams
+	index += 1
+
+	a = [] # List to store the efficiency of n-1 teams
+	for i in range(n - 1): # Loop to read the efficiency of n-1 teams
+		a.append(int(data[index])) # Read efficiency of each team
+		index += 1
+
+	sum_efficiency = sum(a) # Calculate the sum of efficiencies of n-1 teams
+
+	print(-1 * sum_efficiency) # Output the efficiency of the missing team, which is the negative of the sum
