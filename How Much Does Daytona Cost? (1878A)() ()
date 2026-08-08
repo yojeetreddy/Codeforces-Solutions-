@@ -1,0 +1,31 @@
+import sys
+
+input = sys.stdin.read
+
+data = input().split()
+
+index = 0
+
+t = int(data[index]) # Read the number of test cases
+index += 1
+
+for _ in range(t):
+	n = int(data[index]) # Read the size of the array
+	k = int(data[index + 1]) # Read the integer k
+	index += 2
+
+	a = list(map(int, data[index:index + n])) # Input array elements
+	index += n
+
+	# Flag to check if k is present in the array
+	number_is_present = False
+
+	for i in range(n):
+		if a[i] == k: # Check if the current element is equal to k
+			number_is_present = True # Set flag to true if k is found
+			break # Exit the loop as we found k
+
+	if number_is_present:
+		print("YES") # Output YES
+	else:
+		print("NO") # Output NO
